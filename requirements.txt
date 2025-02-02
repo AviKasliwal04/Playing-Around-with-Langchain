@@ -45,8 +45,6 @@ humanfriendly==10.0
 idna==3.10
 importlib_metadata==8.5.0
 importlib_resources==6.5.2
-ipykernel==6.29.5
-ipython==8.31.0
 jedi==0.19.2
 jiter==0.8.2
 jsonpatch==1.33
@@ -75,7 +73,7 @@ nest-asyncio==1.6.0
 numpy==1.26.4
 oauthlib==3.2.2
 ollama==0.4.6
-onnxruntime==1.20.1
+onnxruntime
 openai==1.59.8
 opentelemetry-api==1.29.0
 opentelemetry-exporter-otlp-proto-common==1.29.0

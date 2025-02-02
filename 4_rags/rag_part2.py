@@ -1,12 +1,13 @@
 import os
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+# from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_chroma import Chroma
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 chrom_db = os.path.join(current_dir, 'db')
 
-embeddings = OpenAIEmbeddings(model='text-embedding-3-small')
+embeddings = OllamaEmbeddings(model='mxbai-embed-large')
 
 db = Chroma(
     persist_directory = chrom_db,
@@ -38,7 +39,7 @@ combined_input = f'''
     You need to answer only using the relevant docs, if not possible then pls respond with "No Answer Found"
 '''
 
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOllama(model="llama3.1")
 
 messages = [
     SystemMessage('You are a Data Warehouse expert'),

@@ -1,7 +1,8 @@
 import os
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 
 current_path = os.path.dirname(__file__)
@@ -33,7 +34,7 @@ if not os.path.exists(vector_db_directory) or FORCE_RUN == True:
     print('Sql Codes Chunked into {x} parts'.format(x = len(sql_codes_chunked)))
     print(f'Sample chunk: {sql_codes_chunked[0]}\n\n\n')
 
-    embeddings = OpenAIEmbeddings(model='text-embedding-3-small')
+    embeddings = OllamaEmbeddings(model='mxbai-embed-large')
     print ('Embeding created')
 
 
